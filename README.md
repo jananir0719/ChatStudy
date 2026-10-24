@@ -44,6 +44,11 @@ Client-server chat applications are software systems that enable real-time commu
 ## Client-Server Model:
 Client-server chat applications typically follow the client-server model, where one entity acts as the server, managing connections and facilitating communication, and one or more entities act as clients, initiating communication with the server.
 
+<img width="717" height="502" alt="Screenshot 2026-10-17 083539" src="https://github.com/user-attachments/assets/2485b262-5523-4f3e-8f71-20a909014e4e" />
+
+<img width="632" height="420" alt="Screenshot 2026-10-17 083557" src="https://github.com/user-attachments/assets/abbb8cc8-f19f-4d23-9c00-8a46031211b1" />
+
+
 ## Communication Protocols:
 The choice of communication protocol is crucial. Many chat applications use TCP (Transmission Control Protocol) for reliable, connection-oriented communication to ensure the ordered and error-free exchange of messages.
 User Authentication:
@@ -75,6 +80,8 @@ Client-server chat applications are foundational to real-time communication over
 
 
 ## Result:
+
+<img width="860" height="257" alt="Screenshot 2026-10-17 083527" src="https://github.com/user-attachments/assets/7da8234d-be50-4f9c-a0f0-311ff7675f08" />
 
 Thus the study on Client Server Chat Applications has been performed
 
