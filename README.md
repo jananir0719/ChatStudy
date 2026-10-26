@@ -44,10 +44,58 @@ Client-server chat applications are software systems that enable real-time commu
 ## Client-Server Model:
 Client-server chat applications typically follow the client-server model, where one entity acts as the server, managing connections and facilitating communication, and one or more entities act as clients, initiating communication with the server.
 
-<img width="717" height="502" alt="Screenshot 2026-10-17 083539" src="https://github.com/user-attachments/assets/2485b262-5523-4f3e-8f71-20a909014e4e" />
+server.py
 
-<img width="632" height="420" alt="Screenshot 2026-10-17 083557" src="https://github.com/user-attachments/assets/abbb8cc8-f19f-4d23-9c00-8a46031211b1" />
+import socket
 
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+host = "127.0.0.1"
+port = 12345
+
+server_socket.bind((host, port))
+server_socket.listen(1)
+
+print("Server is waiting for client connection...")
+
+conn, addr = server_socket.accept()
+print("Connected with", addr)
+
+while True:
+    message = conn.recv(1024).decode()
+    if message.lower() == "exit":
+        break
+    print("Client:", message)
+
+    reply = input("Server: ")
+    conn.send(reply.encode())
+
+conn.close()
+server_socket.close()
+
+client.py
+
+import socket
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+host = "127.0.0.1"
+port = 12345
+
+client_socket.connect((host, port))
+print("Connected to server")
+
+while True:
+    message = input("Client: ")
+    client_socket.send(message.encode())
+
+    if message.lower() == "exit":
+        break
+
+    reply = client_socket.recv(1024).decode()
+    print("Server:", reply)
+
+client_socket.close()
 
 ## Communication Protocols:
 The choice of communication protocol is crucial. Many chat applications use TCP (Transmission Control Protocol) for reliable, connection-oriented communication to ensure the ordered and error-free exchange of messages.
@@ -81,7 +129,9 @@ Client-server chat applications are foundational to real-time communication over
 
 ## Result:
 
-<img width="860" height="257" alt="Screenshot 2026-10-17 083527" src="https://github.com/user-attachments/assets/7da8234d-be50-4f9c-a0f0-311ff7675f08" />
+<img width="636" height="120" alt="image" src="https://github.com/user-attachments/assets/ca3571ef-7154-4ea7-9140-0518dfce9852" />
+
+<img width="624" height="166" alt="image" src="https://github.com/user-attachments/assets/4cfb7563-7580-46a6-8c57-9ba0921673c3" />
 
 Thus the study on Client Server Chat Applications has been performed
 
