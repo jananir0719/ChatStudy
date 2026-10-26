@@ -45,7 +45,7 @@ Client-server chat applications are software systems that enable real-time commu
 Client-server chat applications typically follow the client-server model, where one entity acts as the server, managing connections and facilitating communication, and one or more entities act as clients, initiating communication with the server.
 
 server.py
-
+```
 import socket
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -72,9 +72,9 @@ while True:
 
 conn.close()
 server_socket.close()
-
+```
 client.py
-
+```
 import socket
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -96,7 +96,7 @@ while True:
     print("Server:", reply)
 
 client_socket.close()
-
+```
 ## Communication Protocols:
 The choice of communication protocol is crucial. Many chat applications use TCP (Transmission Control Protocol) for reliable, connection-oriented communication to ensure the ordered and error-free exchange of messages.
 User Authentication:
